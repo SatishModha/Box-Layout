@@ -1,0 +1,209 @@
+
+@font-face{
+	font-family:'DancingScript-Regular';
+    src: url('../fonts/DancingScript-Regular.ttf');
+}
+@font-face{
+	font-family:'Poppins-Regular';
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        width:750px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width:970px
+    }
+}
+
+body{
+	 font-family:'Poppins-Regular';
+}
+
+@media (min-width: 1500px) {
+    .container {
+        width:1292px;
+      padding: 0;
+      margin:0 auto; 
+    }
+}
+
+.our-stories-second {
+    display: block;
+    width: 100%;
+    clear: both;
+    font-family:'Poppins-Regular';
+}
+.our-stories-second {
+    position: relative;
+  	padding: 80px 0;
+    width: 50%;
+    margin: 0 auto;
+    display: table;
+}
+
+.our-stories-second .text-box {
+    position: relative;
+    top: 0;
+    flex: 50%;
+        text-align: center;
+}
+
+.our-stories-second .text-box .bg-text {
+	font-family: 'DancingScript-Regular';
+    transform: rotateZ(-11deg);
+    font-size: 100px;
+    font-weight: bold;
+    color: #3e3e3e3d;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    top: -75px;
+    width: 400px;
+    margin: 0 auto;
+    line-height: 119px;
+    text-align: center;
+    color:#cccccc;
+}
+
+.our-stories-second .text-box h2 {
+    font-size: 30px;
+      padding: 0;
+      position: relative;
+    z-index: 1;
+    margin:0;
+}
+
+.our-stories-second .text-box p {
+    padding: 20px;
+  text-align: center;
+  position: relative;
+    z-index: 1;
+    margin:0;
+}
+
+.our-stories-second .text-box a {
+    color: #3e3e3e;
+    text-align: center;
+  	position: relative;
+   	font-size: 15px;
+    display: table;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+}
+.our-stories-second .text-box a i{
+    padding-top: 1px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 6px;
+}
+
+
+
+
+.box-layout  .box-lrg .image-box{
+    position: relative;
+    padding: 12em 12em;
+    overflow: hidden;
+   
+    
+}
+.box-layout  .box-lrg {
+    flex: calc(70% - 15px);
+   margin: 5px 5px;
+}
+
+.box-layout  .text-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 44px;
+}
+
+.box-layout  .box-sml .image-box{
+    padding: 12em 7em;
+    height: 100%;
+    overflow: hidden;
+  
+}
+
+.box-layout  .box-sml {
+    flex: calc(30% - 25px);
+   margin: 5px 5px;
+}
+
+.box-layout {
+    width: 100%;
+    display: table;
+    background-color: white;
+}
+
+.box-layout  .box-row {
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-layout  .text-box h2 {
+    padding: 0;
+    font-size: 18px;
+      position: relative;
+    z-index: 1;
+}
+
+.box-layout  .text-box a {
+    display: block;
+}
+
+.box-layout  .text-box span {
+    letter-spacing: 5px;
+    padding: 10px 0;
+    display: block;
+}
+.box-layout  .text-box .shadow-text{
+    
+    
+    position: absolute;
+    top: 7px;
+    z-index: -1;
+    white-space: nowrap;
+    font-size: 60px;
+    color: #dbdbdb;
+    -webkit-transform: translate(-50%, -50%);
+    -khtml-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+
+.box-layout .video-box {
+    position: relative;
+    padding: 12em 1em;
+    margin: 5px 5px;
+    flex: calc(70% - 15px);
+    overflow: hidden;
+}
+
+.box-layout  .video-box video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+}

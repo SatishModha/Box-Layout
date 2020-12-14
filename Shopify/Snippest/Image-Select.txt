@@ -1,0 +1,3 @@
+<div class="image-box" style="background: url({{block.settings.imageOne | img_url:'master' }});background-size:{{block.settings.img_type }};background-repeat:{{block.settings.img_repeat}};background-position:{{block.settings.img_pos }}">
+</div>  
+ 

@@ -1,0 +1,8 @@
+<div class="video-box">
+
+  <video poster="" playsinline autoplay muted loop>
+    <source src="{{block.settings.video_link}}" type="video/webm">
+    <source src="{{block.settings.video_link}}" type="video/mp4">
+  </video>
+
+</div>

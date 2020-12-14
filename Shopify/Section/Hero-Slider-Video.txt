@@ -1,0 +1,308 @@
+
+<button class="test-btn">test</button>
+<div class="home-section"> 
+  <div class="hero-slider  {{section.settings.arrow_style}}">
+
+      <div class="slider-content">
+        
+       {%for block in section.blocks %}
+        
+          {% case block.type %}
+
+                  {% when 'hero-slide' %}
+                  {% include 'hero-slide' %}
+
+                  {% when 'video-slide' %}
+                  {% include 'video-slide' %}
+
+           {% endcase %}
+        
+       {%endfor%}
+
+      </div>
+         {%for block in section.blocks %}
+
+              <div class="arrows">
+                   <i class="prev  {{section.settings.arrow_icons}}" aria-hidden="true"></i>
+                   <i class="next {{section.settings.arrow_icons}}" aria-hidden="true"></i>
+              </div>
+
+        {%endfor%}
+  </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Hero Slider",
+		
+        "settings":
+        [ 
+            {
+              "type": "select",
+              "id": "arrow_icons",
+              "label": "Arrow Style",
+              "default": "fa fa-arrow-right",
+              "options": 
+                  [
+                    {"value": "fa fa-arrow-right", "label": "Arrow"},
+                    {"value": "fa fa-angle-right", "label": "Angle"},
+                    {"value": "fa fa-angle-double-right", "label": "Angle Double"},
+                    {"value": "fa fa-chevron-right", "label": "Chevron"},
+                    {"value": "fa fa-long-arrow-right", "label": "Long Arrow "}
+              	  ]
+            },
+            {
+                "type": "select",
+                "id": "arrow_style",
+                "label": "Arrow Change Style",
+                "default": "normal",
+                "options": 
+                [
+                    {"value": "normal", "label": "normal"},
+                    {"value": "bottom", "label": "bottom"},
+                    {"value": "center", "label": "Center"},
+                    {"value": "bottom-center", "label": "Bottom Center"}
+                ]
+            },
+            {
+                "type": "select",
+                "id": "block_ani",
+                "label": "Animation",
+                "default": "zoom-in",
+                "options": 
+                [
+                    {"value": "fade", "label": "fade"},
+                    {"value": "fade-up", "label": "fade Up"},
+                    {"value": "fade-down", "label": "fade Down"},
+                    {"value": "fade-left", "label": "fade Left"},
+                    {"value": "fade-right", "label": "fade Right"},
+                    {"value": "slide-up", "label": "slide Up"},
+                    {"value": "slide-down", "label": "slide Down"},
+                    {"value": "slide-left", "label": "slide Left"},
+                    {"value": "slide-right", "label": "slide Right"},
+                    {"value": "flip-up", "label": "flip Up"},
+                    {"value": "flip-down", "label": "flip Down"},
+                    {"value": "flip-left", "label": "flip Left"},
+                    {"value": "flip-right", "label": "flide Right"},
+                    {"value": "zoom-out", "label": "zoom out "},
+                    {"value": "zoom-out-up", "label": "zoom out Up"},
+                    {"value": "zoom-out-down", "label": "zoom out Down"},
+                    {"value": "zoom-out-left", "label": "zoom out Left"},
+                    {"value": "zoom-out-right", "label": "zoom out Right"},
+                    {"value": "zoom-in", "label": "zoom in "},
+                    {"value": "zoom-in-up", "label": "zoom in Up"},
+                    {"value": "zoom-in-down", "label": "zoom in Down"},
+                    {"value": "zoom-in-left", "label": "zoom in Left"},
+                    {"value": "zoom-in-right", "label": "zoom in Right"}
+                ]
+            }
+        ],
+        "blocks": [
+            {
+                "type":"hero-slide",
+                "name":"hero-slide",
+                "settings":[
+                    
+					{
+                        "type":"image_picker",
+                        "label":"Right Side Image",
+                        "id":"image_hero"
+                    },
+
+
+					
+					{
+                        "type": "select",
+                        "id": "img_type",
+                        "label": "Image Type",
+                        "default": "cover",
+                        "options": 
+                        [
+                            {"value": "cover", "label": "Cover"},
+                            {"value": "contain", "label": "Contain"},
+							{"value": "unset", "label": "Unset"},
+ 							{"value": "auto", "label": "Auto"}
+                        ]
+                    },
+					{
+                        "type": "select",
+                        "id": "img_repeat",
+                        "label": "Image Repeat",
+                        "default": "no-repeat",
+                        "options": 
+                        [
+                            {"value": "no-repeat", "label": "No repeat "},
+                            {"value": "repeat", "label": "Repeat "},
+							{"value": "round", "label": "Round "}
+ 						
+                        ]
+                    },
+					{
+                        "type": "select",
+                        "id": "img_pos",
+                        "label": "Image Position",
+                        "default": "center",
+                        "options": 
+                        [
+                            {"value": "center", "label": "Center"},
+                            {"value": "top", "label": "Top "},
+							{"value": "bottom", "label": "Bottom "},
+                            {"value": "left", "label": "Left "},
+                            {"value": "right", "label": "Right "}
+ 						
+                        ]
+                    },
+                    {
+                            "type": "color",
+                            "id": "color_txt",
+                            "label": "Main Color Change",
+                            "default": "#3e3e3e"
+					},
+ 					{
+                            "type": "color",
+                            "id": "color_txt_high",
+                            "label": "Highlight Color Change",
+                            "default": "#8ebdac"
+					},
+                    {
+                    	"type": "text",
+                    	"id": "text_heading_1",
+                    	"label": "Slider Heading",
+                    	"default": "Rakuten"
+                    },
+  					{
+                    	"type": "text",
+                    	"id": "text_heading_2",
+                    	"label": "Slider Heading Type",
+                    	"default": "Arm Chair"
+                    },
+					{
+                    	"type": "text",
+                    	"id": "text_button",
+                    	"label": "Link Text ",
+                    	"default": "Show Now"
+					},
+				
+					{
+                    	"type": "text",
+                    	"id": "text_name",
+                    	"label": "Product Name ",
+                    	"default": "Product Name"
+					},
+					{
+                    	"type": "text",
+                    	"id": "text_type",
+                    	"label": "Product Type",
+                    	"default": "Product Type"
+					},
+					{
+                    	"type": "text",
+                    	"id": "text_year",
+                    	"label": "Enter Year or Anything",
+                    	"default": "2020"
+					}
+                ]
+            },
+			{
+              "type":"video-slide",
+              "name":"video-slide",
+              "settings": 
+                [
+                  {
+                    "type": "paragraph",
+                    "content": "Background videos are automatically muted."
+                  },
+
+                  {
+                      "type": "text",
+                      "id": "video_link",
+                      "label": "Video Link",
+                      "default": "http://thenewcode.com/assets/videos/fashion.mp4"
+                  },
+                  {
+                            "type": "color",
+                            "id": "color_txt",
+                            "label": "Main Color Change",
+                            "default": "#3e3e3e"
+					},
+ 					{
+                            "type": "color",
+                            "id": "color_txt_high",
+                            "label": "Highlight Color Change",
+                            "default": "#8ebdac"
+					},
+                    {
+                    	"type": "text",
+                    	"id": "text_heading_1",
+                    	"label": "Slider Heading",
+                    	"default": "Rakuten"
+                    },
+  					{
+                    	"type": "text",
+                    	"id": "text_heading_2",
+                    	"label": "Slider Heading Type",
+                    	"default": "Arm Chair"
+                    },
+					{
+                    	"type": "text",
+                    	"id": "text_button",
+                    	"label": "Link Text ",
+                    	"default": "Show Now"
+					},
+				
+					{
+                    	"type": "text",
+                    	"id": "text_name",
+                    	"label": "Product Name ",
+                    	"default": "Product Name"
+					},
+					{
+                    	"type": "text",
+                    	"id": "text_type",
+                    	"label": "Product Type",
+                    	"default": "Product Type"
+					},
+					{
+                    	"type": "text",
+                    	"id": "text_year",
+                    	"label": "Enter Year or Anything",
+                    	"default": "2020"
+					}
+		
+			
+                ]
+            }
+        ],
+        "presets": 
+        [
+            {
+                "name": "Hero Slider New",
+                "category": "Custom layout"
+            }
+        ]
+    }
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+
+  
+ 
+
+{% endjavascript %}
+{%- assign product_text = section.settings.arrow_style -%}
+<script>
+
+$(document).ready(function() {
+	var class_name = `{{section.settings.arrow_style }}`;
+
+    $('.test-btn').click(function(event) {
+   		console.log("click");
+        console.log(class_name);
+    });
+  });
+
+</script>

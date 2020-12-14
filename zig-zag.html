@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="">
+<div class="our-products">
+  <h2 data-live-text-setting="section.product-zigzag-layout.text_heading">Our Products</h2>
+  
+	<div class="product-row">
+		<div class="product-content">
+			
+                	<div class="image-box" style="background: url(./images/fashion-1.jpg);background-size:cover;background-repeat:no-repeat;background-position:top">
+</div>  
+ 
+ 
+  
+  				
+          <h3 data-live-text-setting="section.product-zigzag-layout.block.f02fb0a3-520a-4606-a0ee-f5067c50744d.product_heading">Jackets</h3>
+		</div>
+
+		<div class="product-text" data-live-text-setting="section.product-zigzag-layout.block.f02fb0a3-520a-4606-a0ee-f5067c50744d.para_text">
+			
+			<p>Quisque sit amet ex at orci posuere ullamcorper. Maecenas at iaculis diam. Nulla sem mauris, posuere id orci eget, rutrum efficitur nisl.</p>
+		</div>
+	</div>
+  
+	<div class="product-row">
+		<div class="product-content">
+			
+            	<div class="video-box">
+
+  <video poster="" playsinline="" autoplay="" muted="" loop="">
+    <source src="./images/fashion.mp4" type="video/webm">
+    <source src="./images/fashion.mp4" type="video/mp4">
+  </video>
+
+</div>
+           
+    		
+          <h3 data-live-text-setting="section.product-zigzag-layout.block.1d73f115-6b45-4a0e-97b3-dc90bc862e76.product_heading">Style</h3>
+		</div>
+
+		<div class="product-text" data-live-text-setting="section.product-zigzag-layout.block.1d73f115-6b45-4a0e-97b3-dc90bc862e76.para_text">
+			
+			<p>Quisque sit amet ex at orci posuere ullamcorper. Maecenas at iaculis diam. Nulla sem mauris, posuere id orci eget, rutrum efficitur nisl.</p>
+		</div>
+	</div>
+  
+	<div class="product-row">
+		<div class="product-content">
+			
+            	<div class="image-box" style="background: url(./images/fashion-3.jpg);background-size:cover;background-repeat:no-repeat;background-position:top">
+</div>  
+ 
+  
+  				
+          <h3 data-live-text-setting="section.product-zigzag-layout.block.c07325fd-90d0-4509-b9d4-83315b06f9ac.product_heading">Sweater</h3>
+		</div>
+
+		<div class="product-text" data-live-text-setting="section.product-zigzag-layout.block.c07325fd-90d0-4509-b9d4-83315b06f9ac.para_text">
+			
+			<p>Quisque sit amet ex at orci posuere ullamcorper. Maecenas at iaculis diam. Nulla sem mauris, posuere id orci eget, rutrum efficitur nisl.</p>
+		</div>
+	</div>
+  
+	<div class="product-row">
+		<div class="product-content">
+			
+            	<div class="video-box">
+
+  <video poster="" playsinline="" autoplay="" muted="" loop="">
+    <source src="./images/fashion-2.mp4" type="video/webm">
+    <source src="./images/fashion-2.mp4" type="video/mp4">
+  </video>
+
+</div>
+           
+    		
+          <h3 data-live-text-setting="section.product-zigzag-layout.block.20243a7e-4b5b-437a-aab8-771c414b0ee1.product_heading">Fashion</h3>
+		</div>
+
+		<div class="product-text" data-live-text-setting="section.product-zigzag-layout.block.20243a7e-4b5b-437a-aab8-771c414b0ee1.para_text">
+			
+			<p>Quisque sit amet ex at orci posuere ullamcorper. Maecenas at iaculis diam. Nulla sem mauris, posuere id orci eget, rutrum efficitur nisl.</p>
+		</div>
+	</div>
+  
+</div>
+
+<style>
+
+.our-products .product-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex: auto;
+      padding: 30px 0;
+}
+
+.our-products .product-row .image-box {
+    min-height: 400px;
+}
+
+.product-content {
+  width: calc(50% - 20px);
+  display: inline-block;
+}
+
+.product-text {
+    width: calc(50% - 30px);
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    margin-left: -28px;
+    position: relative;
+}
+
+.our-products .product-row .video-box video {
+    display: inline-block;
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.our-products .product-row:nth-child(odd) {
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+}
+
+.our-products .product-row:nth-child(odd) .product-text {
+    margin-left: 0;
+    margin-right: -28px;
+}
+  .our-products .product-row:nth-child(odd) .product-text p {
+		float:right;
+}
+  
+  .product-content {
+    position: relative;
+}
+.product-content h3 {
+    font-size: 50px;
+    position: absolute;
+    right: -17%;
+	letter-spacing: 7px;
+    top: 26px;
+    color: {{ section.settings.product_heading_color}};
+    font-weight: bold;
+    opacity: 0.3;
+    font-family: 'DancingScript-Regular';
+    margin: 0;
+}
+
+.our-products .product-row:nth-child(odd) .product-content h3 {
+    font-size: 50px;
+    position: absolute;
+    left: -17%;
+    top: 26px;
+}
+.our-products h2 {
+    margin: 0;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 25px;
+
+}
+
+.our-products {
+    padding: 50px 0;
+}
+.product-text p {
+    margin: 0;
+    text-align: center;
+    line-height: 25px;
+    letter-spacing: 1px;
+    background-color:{{ section.settings.para_bg }};
+	width:350px;
+    padding:30px;
+  	color:{{ section.settings.product_para_color }};
+}
+  @media only screen and (max-width: 767px){
+    	.product-content {
+            width: 100%;
+        }
+
+        .product-text {
+            width: 100%;
+            margin: 0;
+        }
+
+        .product-text p {
+            width: auto;
+        }
+
+        .our-products .product-row .image-box {
+            min-height: 300px;
+        }
+
+        .our-products .product-row .video-box video {
+            min-height: 300px;
+        }
+
+        .our-products .product-row:nth-child(odd) {
+            flex-wrap: wrap;
+        }
+
+        .our-products .product-row:nth-child(odd) .product-text {
+            margin: -5px 0 0 0;
+        }
+
+        .product-content h3 {
+            font-size: 36px;
+            right: 0;
+            text-align: center;
+            top: -25px;
+        }
+
+        .our-products .product-row:nth-child(odd) .product-content h3 {
+             font-size: 36px;
+             left: unset;
+             right: 0;
+             margin: 0 auto;
+             text-align: center;
+             top: -25px;
+        }
+	}
+
+  
+  
+	</div>
+
+
+</body>
+</html>

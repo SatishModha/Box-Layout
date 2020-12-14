@@ -1,0 +1,16 @@
+<div class="image-box"  style="background: url({{block.settings.image_hero | img_url:'master' }});background-size:{{block.settings.img_type }};background-repeat:{{block.settings.img_repeat}};background-position:{{block.settings.img_pos }}">
+  <div class="text-content" data-aos="{{section.settings.block_ani}}">
+    <small style="color:{{block.settings.color_txt}}">{{block.settings.text_name}}</small>
+    <small style="color:{{block.settings.color_txt_high}}" class="highlight">{{block.settings.text_type}}</small>
+    <small style="color:{{block.settings.color_txt}}">{{block.settings.text_year}}</small>
+
+    <div class="heading-text">
+      <h1 style="color:{{block.settings.color_txt}}">{{block.settings.text_heading_1}}</h1>
+      <h1 style="color:{{block.settings.color_txt}}">{{block.settings.text_heading_2}}</h1>
+    </div>
+
+    <div class="link-box">
+      <a href="#" style="color:{{block.settings.color_txt}}">{{block.settings.text_button}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>

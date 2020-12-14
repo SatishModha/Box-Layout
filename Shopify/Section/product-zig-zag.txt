@@ -1,0 +1,316 @@
+<div class="our-products">
+  <h2>{{ section.settings.text_heading }}</h2>
+  {%for block in section.blocks %}
+	<div class="product-row">
+		<div class="product-content">
+			{% case block.type %}
+  
+				{% when 'image-banner' %}
+            	{% include 'image-select' %}
+  
+  				{% when 'video-banner' %}
+            	{% include 'video-select' %}
+           
+    		{% endcase %}
+          <h3>{{block.settings.product_heading}}</h3>
+		</div>
+
+		<div class="product-text">
+			
+			{{block.settings.para_text}}
+		</div>
+	</div>
+  {%endfor%}
+</div>
+
+<style>
+
+.our-products .product-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex: auto;
+      padding: 30px 0;
+}
+
+.our-products .product-row .image-box {
+    min-height: 400px;
+}
+
+.product-content {
+  width: calc(50% - 20px);
+  display: inline-block;
+}
+
+.product-text {
+    width: calc(50% - 30px);
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    margin-left: -28px;
+    position: relative;
+}
+
+.our-products .product-row .video-box video {
+    display: inline-block;
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.our-products .product-row:nth-child(odd) {
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+}
+
+.our-products .product-row:nth-child(odd) .product-text {
+    margin-left: 0;
+    margin-right: -28px;
+}
+  .our-products .product-row:nth-child(odd) .product-text p {
+		float:right;
+}
+  
+  .product-content {
+    position: relative;
+}
+.product-content h3 {
+    font-size: 50px;
+    position: absolute;
+    right: -17%;
+	letter-spacing: 7px;
+    top: 26px;
+    color: {{ section.settings.product_heading_color}};
+    font-weight: bold;
+    opacity: 0.3;
+    margin: 0;
+}
+
+.our-products .product-row:nth-child(odd) .product-content h3 {
+    font-size: 50px;
+    position: absolute;
+    left: -17%;
+    top: 26px;
+}
+.our-products h2 {
+    margin: 0;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 25px;
+
+}
+
+.our-products {
+    padding: 50px 0;
+}
+.product-text p {
+    margin: 0;
+    text-align: center;
+    line-height: 25px;
+    letter-spacing: 1px;
+    background-color:{{ section.settings.para_bg }};
+	width:350px;
+    padding:30px;
+  	color:{{ section.settings.product_para_color }};
+}
+  @media only screen and (max-width: 767px){
+    	.product-content {
+            width: 100%;
+        }
+
+        .product-text {
+            width: 100%;
+            margin: 0;
+        }
+
+        .product-text p {
+            width: auto;
+        }
+
+        .our-products .product-row .image-box {
+            min-height: 300px;
+        }
+
+        .our-products .product-row .video-box video {
+            min-height: 300px;
+        }
+
+        .our-products .product-row:nth-child(odd) {
+            flex-wrap: wrap;
+        }
+
+        .our-products .product-row:nth-child(odd) .product-text {
+            margin: -5px 0 0 0;
+        }
+
+        .product-content h3 {
+            font-size: 36px;
+            right: 0;
+            text-align: center;
+            top: -25px;
+        }
+
+        .our-products .product-row:nth-child(odd) .product-content h3 {
+             font-size: 36px;
+             left: unset;
+             right: 0;
+             margin: 0 auto;
+             text-align: center;
+             top: -25px;
+        }
+	}
+
+
+
+
+</style>
+
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [
+  		{
+          "type": "text",
+          "id": "text_heading",
+          "label": "Section Heading",
+          "default": "Our Products"
+        },
+	
+        {
+          "type": "paragraph",
+          "content": "Product Heading Color Show Light Effect of Color."
+        },
+ 		{
+          "type": "color",
+          "id": "product_heading_color",
+          "label": "Product Heading Color",
+          "default": "#3a3a3a"
+        },
+      
+ 		{
+          "type": "color",
+          "id": "product_para_color",
+          "label": "Paragraph Color",
+          "default": "#333232"
+          },
+ {
+                    "type": "color",
+                    "id": "para_bg",
+                    "label": "Pargrapg BG Color",
+                    "default": "#f6f6f6"
+                  }
+  	],
+   	"blocks": [
+            {
+              "type": "image-banner",
+              "name": "Add Image",
+              "settings": [
+  				{
+                    "id": "imageOne",
+                    "type": "image_picker",
+                    "label": "Image"
+          	    },
+                {
+                  "type": "select",
+                  "id": "img_type",
+                  "label": "Image Type",
+                  "default": "cover",
+                  "options": 
+                  [
+                    {"value": "cover", "label": "Cover"},
+                    {"value": "contain", "label": "Contain"},
+                    {"value": "unset", "label": "Unset"},
+                    {"value": "auto", "label": "Auto"}
+                  ]
+                  },
+                  {
+                  "type": "select",
+                  "id": "img_repeat",
+                  "label": "Image Repeat",
+                  "default": "no-repeat",
+                  "options": 
+                   [
+                    {"value": "no-repeat", "label": "No repeat "},
+                    {"value": "repeat", "label": "Repeat "},
+                    {"value": "round", "label": "Round "}
+
+                  ]
+                  },
+                  {
+                  "type": "select",
+                  "id": "img_pos",
+                  "label": "Image Position",
+                  "default": "center",
+                  "options": 
+                  [
+                    {"value": "center", "label": "Center"},
+                    {"value": "top", "label": "Top "},
+                    {"value": "bottom", "label": "Bottom "},
+                    {"value": "left", "label": "Left "},
+                    {"value": "right", "label": "Right "}
+
+                ]
+                },
+  				{
+                      "type": "text",
+                      "id": "product_heading",
+                      "label": "Product Heading",
+                      "default": "Product"
+                  },
+ 				 {
+                  "type": "richtext",
+                  "id": "para_text",
+                  "label": "Paragraph",
+                  "default": "<p>Quisque sit amet ex at orci posuere ullamcorper. Maecenas at iaculis diam. Nulla sem mauris, posuere id orci eget, rutrum efficitur nisl.</p>"
+                }
+  			  ]
+  			},
+  			{
+              "type": "video-banner",
+              "name": "Add Video",
+              "settings": 
+              [
+                  {
+                    "type": "paragraph",
+                    "content": "Background videos are automatically muted."
+                  },
+
+                  {
+                    "type": "text",
+                    "id": "video_link",
+                    "label": "Video Link",
+                    "default": "http://thenewcode.com/assets/videos/fashion.mp4"
+                  },
+                  {
+                      "type": "text",
+                      "id": "text_heading_h2",
+                      "label": "Style Name",
+                      "default": "Style"
+                  },
+                  {
+                      "type": "text",
+                      "id": "product_heading",
+                      "label": "Product Heading",
+                      "default": "Product"
+                  },
+ 				 {
+                  "type": "richtext",
+                  "id": "para_text",
+                  "label": "Paragraph",
+                  "default": "<p>Quisque sit amet ex at orci posuere ullamcorper. Maecenas at iaculis diam. Nulla sem mauris, posuere id orci eget, rutrum efficitur nisl.</p>"
+                }
+            ]
+        }
+  	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
